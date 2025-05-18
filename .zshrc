@@ -1,3 +1,7 @@
+# default path
+DEVELOPER_PATH=~/Developer
+cd $DEVELOPER_PATH
+
 # nvm (oh-my-zsh plugin)
 zstyle ':omz:plugins:nvm' lazy yes # speed-up zsh startup
 zstyle ':omz:plugins:nvm' autoload yes
@@ -25,7 +29,8 @@ esac
 # dev command
 # usage: dev <project-name>
 _dev_autocomplete() {
-    local projects_dir=~/Developer/code
+    # TODO: remove the /code from the path
+    local projects_dir=$DEVELOPER_PATH/code
     _arguments '*:project name:->projects'
     case $state in
         projects)
@@ -42,13 +47,17 @@ dev() {
         return 1
     fi
 
-    cd ~/Developer/code/$1
+    cd $DEVELOPER_PATH/code/$1
 
     if [[ $? != 0 ]]; then
         echo "The specified directory does not exist."
         return 1
     fi
 }
+
+# c command
+alias c='cursor'
+compdef _gnu_generic c
 
 # git utilities
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
@@ -59,5 +68,5 @@ alias docker-stop-all='docker stop $(docker ps -a -q)'
 # Misc utilities
 alias clearhist='rm ~/.zsh_history'
 alias nukedotenv='find . -type f -name ".env*" -print -exec rm -f {} \;'
-alias update-hosts='sudo node ~/Developer/sh/update-hosts-file.js && echo "Updated /etc/hosts"'
-
+alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-hosts.js"
+alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"

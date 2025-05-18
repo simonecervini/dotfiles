@@ -1,0 +1,15 @@
+# reference https://ghostty.org/docs/config/reference
+
+font-family = IBM Plex Mono
+font-style = Medium
+font-size = 17
+theme = Broadcast
+cursor-style = block
+cursor-color = #d946ef
+shell-integration-features = no-cursor
+macos-secure-input-indication = true
+macos-titlebar-style = tabs
+copy-on-select = clipboard
+window-title-font-family = IBM Plex Mono Medium
+window-padding-x = 9
+window-padding-y = 9
