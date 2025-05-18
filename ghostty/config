@@ -2,10 +2,9 @@
 
 font-family = IBM Plex Mono
 font-style = Medium
-font-size = 17
-theme = Broadcast
+font-size = 16
+theme = custom-theme
 cursor-style = block
-cursor-color = #d946ef
 shell-integration-features = no-cursor
 macos-secure-input-indication = true
 macos-titlebar-style = tabs
