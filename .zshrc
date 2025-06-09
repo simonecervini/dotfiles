@@ -70,3 +70,23 @@ alias clearhist='rm ~/.zsh_history'
 alias nukedotenv='find . -type f -name ".env*" -print -exec rm -f {} \;'
 alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-hosts.js"
 alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
+
+# `k` command (kill all processes running on a port)
+kill_port() {
+    if [ -z "$1" ]; then
+        echo "Usage: k <port_number>"
+        return 1
+    fi
+
+    PORT=$1
+    PIDS=$(lsof -t -i:"$PORT")
+
+    if [ -z "$PIDS" ]; then
+        echo "No processes found running on port $PORT"
+        return 0
+    fi
+
+    echo "Killing processes on port $PORT: $PIDS"
+    kill -9 $PIDS
+}
+alias k='kill_port'
