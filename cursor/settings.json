@@ -1,0 +1,89 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "material-icon-theme.files.associations": {
+    "Dockerfile.dev": "Docker"
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.formatOnPaste": true,
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "jupyter.askForKernelRestart": false,
+  "python.pythonPath": "/usr/bin/python3",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "jupyter.alwaysTrustNotebooks": true,
+  "tabnine.experimentalAutoImports": true,
+  "editor.guides.bracketPairs": "active",
+  "git.autofetch": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.pullRequests.enabled": false,
+  "gitlens.currentLine.scrollable": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.fileAnnotations.command": "blame",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "material-icon-theme.files.color": "#ff7043",
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.folders.theme": "classic",
+  "git.confirmSync": false,
+  "editor.fontFamily": "'IBM Plex Mono',Arial",
+  "github.copilot.advanced": {},
+  "git.enableSmartCommit": true,
+  "workbench.tips.enabled": false,
+  "editor.colorDecorators": false,
+  "vim.smartRelativeLine": true,
+  "scm.showChangesSummary": false,
+  "scm.showOutgoingChanges": "never",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "editor.cursorStyle": "block",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "githubPullRequests.fileListLayout": "tree",
+  "editor.autoClosingBrackets": "never",
+  "html.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.autoClosingTags": false,
+  "git.branchPrefix": "sc/",
+  "todohighlight.keywords": [
+    "TODO:",
+    "FIXME:",
+    {
+      "text": "NOTE:",
+      "color": "black",
+      "backgroundColor": "rgba(255, 255, 255, 0.4)"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    "borderRadius": "3px"
+  },
+  "git.branchRandomName.enable": true,
+  "scm.showHistoryGraph": false,
+  "git.branchProtection": ["main", "master"],
+  "workbench.settings.applyToAllProfiles": ["workbench.iconTheme"],
+  "workbench.iconTheme": "minimal-icons",
+  "settingsSync.ignoredSettings": ["workbench.iconTheme"],
+  "editor.formatOnSave": true,
+  "workbench.tree.indent": 11,
+  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": true,
+  "cursor.cpp.disabledLanguages": ["scminput", "yaml", "markdown"],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "githubPullRequests.pullBranch": "never",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.cursorSurroundingLines": 8,
+  "editor.fontSize": 14,
+  "cursor.composer.shouldAllowCustomModes": true,
+  "cursor.composer.shouldAutoAcceptDiffs": false
+}
