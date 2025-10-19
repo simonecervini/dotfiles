@@ -63,6 +63,19 @@ alias c='cursor'
 compdef _gnu_generic c
 
 # git utilities
+wip() {
+    current_branch=$(git branch --show-current)
+    protected_branches=("main" "master" "production" "prod")
+    
+    for branch in "${protected_branches[@]}"; do
+        if [[ "$current_branch" == "$branch" ]]; then
+            echo "Error: Cannot push WIP commit to $current_branch branch (protected branch)"
+            return 1
+        fi
+    done
+    
+    git add . && git commit -m "wip" --no-verify && git push
+}
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
 
 # docker utilities
