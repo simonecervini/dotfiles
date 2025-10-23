@@ -3,7 +3,7 @@ DEVELOPER_PATH=~/Developer
 cd $DEVELOPER_PATH
 
 # fnm (optional)
-eval "$(fnm env --use-on-cd --shell zsh)" 2>/dev/null || true
+command -v fnm &>/dev/null && eval "$(fnm env --use-on-cd --shell zsh)"
 
 # nvm (oh-my-zsh plugin)
 zstyle ':omz:plugins:nvm' lazy yes # speed-up zsh startup
