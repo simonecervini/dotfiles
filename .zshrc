@@ -74,7 +74,7 @@ wip() {
         fi
     done
     
-    git add . && git commit -m "wip" --no-verify && git push
+    git add . && git commit -m "wip" --no-verify --allow-empty && git push
 }
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
 
