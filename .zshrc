@@ -76,6 +76,7 @@ wip() {
     
     git add . && git commit -m "wip" --no-verify --allow-empty && git push
 }
+alias git-browse="open $(git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/')"
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
 
 # docker utilities
