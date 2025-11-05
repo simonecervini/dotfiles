@@ -8,5 +8,7 @@ mkdir -p ~/.config/ghostty/themes
 cp ghostty/custom-theme $HOME/.config/ghostty/themes/custom-theme
 cp cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.json
 cp cursor/keybindings.json $HOME/Library/Application\ Support/Cursor/User/keybindings.json
+cp cursor/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+cp cursor/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 zsh -i -c 'omz reload'
