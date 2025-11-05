@@ -1,86 +1,19 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "shift+alt+i",
-    "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+alt+i",
-    "command": "editor.action.sourceAction",
-    "args": {
-      "kind": "source.addMissingImports",
-      "apply": "first"
-    }
-  },
-  {
-    "key": "ctrl+alt+d",
-    "command": "cursorWordPartRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+a",
-    "command": "cursorWordPartLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "editor.action.goToDeclaration"
-  },
-  {
-    "key": "ctrl+alt+d",
-    "command": "deleteRight",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "-deleteRight",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+cmd+k",
-    "command": "workbench.action.moveEditorToNextGroup"
-  },
-  {
-    "key": "ctrl+cmd+right",
-    "command": "-workbench.action.moveEditorToNextGroup"
-  },
-  {
-    "key": "ctrl+cmd+j",
-    "command": "workbench.action.moveEditorToPreviousGroup"
-  },
-  {
-    "key": "ctrl+cmd+left",
-    "command": "-workbench.action.moveEditorToPreviousGroup"
-  },
-  {
-    "key": "ctrl+cmd+h",
-    "command": "workbench.action.moveEditorToFirstGroup"
-  },
-  {
-    "key": "ctrl+cmd+1",
-    "command": "-workbench.action.moveEditorToFirstGroup"
-  },
-  {
-    "key": "ctrl+cmd+l",
-    "command": "workbench.action.moveEditorToLastGroup"
-  },
-  {
-    "key": "ctrl+cmd+9",
-    "command": "-workbench.action.moveEditorToLastGroup"
-  },
-  {
-    "key": "alt+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
+  // alt+j (highlight previous word)
   {
     "key": "alt+j",
+    "command": "editor.action.wordHighlight.prev",
+    "when": "editorTextFocus && hasWordHighlights"
+  },
+  {
+    "key": "shift+f7",
+    "command": "-editor.action.wordHighlight.prev",
+    "when": "editorTextFocus && hasWordHighlights"
+  },
+  // alt+k (highlight next word)
+  {
+    "key": "alt+k",
     "command": "editor.action.wordHighlight.next",
     "when": "editorTextFocus && hasWordHighlights"
   },
@@ -89,14 +22,20 @@
     "command": "-editor.action.wordHighlight.next",
     "when": "editorTextFocus && hasWordHighlights"
   },
+  // ctrl+f (go to references)
   {
-    "key": "alt+k",
-    "command": "editor.action.wordHighlight.prev",
-    "when": "editorTextFocus && hasWordHighlights"
+    "key": "ctrl+f",
+    "command": "-cursorRight",
+    "when": "textInputFocus"
   },
   {
-    "key": "shift+f7",
-    "command": "-editor.action.wordHighlight.prev",
-    "when": "editorTextFocus && hasWordHighlights"
+    "key": "ctrl+f",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+f12",
+    "command": "-editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   }
 ]
