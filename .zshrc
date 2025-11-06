@@ -78,7 +78,7 @@ git-wip() {
 }
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
-alias git-stash-all='git stash push -a -m "STASH_$(date +%Y%m%d_%H%M%S)"'
+alias git-shit='git stash push -a -m "SHIT_$(date +%Y%m%d_%H%M%S)"'
 
 # docker utilities
 alias docker-stop-all='docker stop $(docker ps -a -q)'
