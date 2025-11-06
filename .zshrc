@@ -83,6 +83,7 @@ alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -
 alias docker-stop-all='docker stop $(docker ps -a -q)'
 
 # Misc utilities
+alias aws-whoami='aws --no-cli-pager sts get-caller-identity --query "Arn" --output text'
 alias clearhist='rm ~/.zsh_history'
 alias nukedotenv='find . -type f -name ".env*" -print -exec rm -f {} \;'
 alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-hosts.js"
