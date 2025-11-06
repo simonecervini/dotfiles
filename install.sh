@@ -11,4 +11,4 @@ cp cursor/keybindings.json $HOME/Library/Application\ Support/Cursor/User/keybin
 cp cursor/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 cp cursor/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
-zsh -i -c 'omz reload'
+zsh -i -c 'omz reload' || true
