@@ -74,7 +74,17 @@ git-wip() {
         fi
     done
     
-    git add . && git commit -m "wip" --no-verify --allow-empty && git push
+    git add .
+    
+    timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    diff_stats=$(git diff --cached --stat)
+    commit_msg="WIP 🚧
+
+${diff_stats}
+
+T = $timestamp"
+    
+    git commit -m "$commit_msg" --no-verify --allow-empty && git push
 }
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
 alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
