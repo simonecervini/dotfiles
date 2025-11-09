@@ -76,8 +76,8 @@ git-wip() {
     
     git add .
     
-    timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    diff_stats=$(git diff --cached --stat)
+    timestamp=$(date '+%Y-%m-%d %H:%M:%S (%Z)')
+    diff_stats=$(git diff --cached --stat | sed 's/^ *//')
     commit_msg="WIP 🚧
 
 ${diff_stats}
