@@ -11,7 +11,7 @@
   "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'IBM Plex Mono',Arial",
+  "editor.fontFamily": "'Berkeley Mono', 'Berkeley Mono Trial', 'IBM Plex Mono', Arial",
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
