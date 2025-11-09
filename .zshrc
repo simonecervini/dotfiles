@@ -86,8 +86,18 @@ T = $timestamp"
     
     git commit -m "$commit_msg" --no-verify --allow-empty && git push
 }
+git-sprout() {
+    source ~/.config/simonecervini/adjectives.sh
+    source ~/.config/simonecervini/animals.sh
+    
+    date_iso=$(date '+%Y-%m-%d')
+    adjective=${ADJECTIVES[$RANDOM % ${#ADJECTIVES[@]}]}
+    animal=${ANIMALS[$RANDOM % ${#ANIMALS[@]}]}    
+    
+    branch_name="simone/${date_iso}-${adjective}-${animal}"
+    git checkout -b "$branch_name"
+}
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
-alias git-new-branch='git checkout -b sc/$(head -c 16 /dev/urandom | md5 | cut -c 1-6)'
 alias git-shit='git stash push -a -m "SHIT_$(date +%Y%m%d_%H%M%S)"'
 
 # docker utilities

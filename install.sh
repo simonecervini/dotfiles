@@ -11,5 +11,8 @@ cp cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.
 cp cursor/keybindings.json $HOME/Library/Application\ Support/Cursor/User/keybindings.json
 cp cursor/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 cp cursor/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+rm -rf ~/.config/simonecervini && mkdir -p ~/.config/simonecervini
+cp scripts-sh/adjectives.sh ~/.config/simonecervini/adjectives.sh
+cp scripts-sh/animals.sh ~/.config/simonecervini/animals.sh
 
 zsh -i -c 'omz reload' || true
