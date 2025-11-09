@@ -62,6 +62,20 @@ dev() {
 alias c='cursor'
 compdef _gnu_generic c
 
+# wildid - generates a unique identifier (date-adjective-animal)
+# usage: wildid [separator]
+wildid() {
+    source ~/.config/simonecervini/adjectives.sh
+    source ~/.config/simonecervini/animals.sh
+    
+    local separator="${1:--}"
+    local date_iso=$(date '+%Y-%m-%d')
+    local adjective=${ADJECTIVES[$RANDOM % ${#ADJECTIVES[@]}]}
+    local animal=${ANIMALS[$RANDOM % ${#ANIMALS[@]}]}
+    
+    echo "${date_iso}${separator}${adjective}${separator}${animal}"
+}
+
 # git utilities
 git-wip() {
     current_branch=$(git branch --show-current)
@@ -87,14 +101,8 @@ T = $timestamp"
     git commit -m "$commit_msg" --no-verify --allow-empty && git push
 }
 git-sprout() {
-    source ~/.config/simonecervini/adjectives.sh
-    source ~/.config/simonecervini/animals.sh
-    
-    date_iso=$(date '+%Y-%m-%d')
-    adjective=${ADJECTIVES[$RANDOM % ${#ADJECTIVES[@]}]}
-    animal=${ANIMALS[$RANDOM % ${#ANIMALS[@]}]}    
-    
-    branch_name="simone/${date_iso}-${adjective}-${animal}"
+    local id=$(wildid)
+    branch_name="simone/${id}"
     git checkout -b "$branch_name"
 }
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
