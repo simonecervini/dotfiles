@@ -70,8 +70,9 @@ wildid() {
     
     local separator="${1:--}"
     local date_iso=$(date '+%Y-%m-%d')
-    local adjective=${ADJECTIVES[$RANDOM % ${#ADJECTIVES[@]}]}
-    local animal=${ANIMALS[$RANDOM % ${#ANIMALS[@]}]}
+    
+    local adjective=$(printf '%s\n' "${ADJECTIVES[@]}" | sort -R | head -n1)
+    local animal=$(printf '%s\n' "${ANIMALS[@]}" | sort -R | head -n1)
     
     echo "${date_iso}${separator}${adjective}${separator}${animal}"
 }
