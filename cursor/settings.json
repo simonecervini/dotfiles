@@ -21,6 +21,7 @@
   "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
+  "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
   "git.allowNoVerifyCommit": true,
   "git.autofetch": true,
   "git.branchPrefix": "sc/",
