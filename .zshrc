@@ -97,6 +97,8 @@ git-wip() {
 
 ${diff_stats}
 
+[skip ci]
+
 T = $timestamp"
     
     git commit -m "$commit_msg" --no-verify --allow-empty && git push
