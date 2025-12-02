@@ -108,8 +108,10 @@ git-sprout() {
     branch_name="simone/${id}"
     git checkout -b "$branch_name"
 }
+git-shit() {
+    git stash push -a -m "SHIT_$(date +%Y%m%d_%H%M%S)"
+}
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
-alias git-shit='git stash push -a -m "SHIT_$(date +%Y%m%d_%H%M%S)"'
 alias git-story='git log --oneline --decorate --color --abbrev-commit --date=relative --pretty=format:"%C(yellow)%h%C(reset) - %C(green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)%C(red)%d%C(reset)"'
 
 # docker utilities
