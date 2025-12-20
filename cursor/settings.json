@@ -24,7 +24,7 @@
   "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
   "git.allowNoVerifyCommit": true,
   "git.autofetch": true,
-  "git.branchPrefix": "sc/",
+  "git.branchPrefix": "simone/",
   "git.branchProtection": ["main", "master", "prod", "production"],
   "git.branchRandomName.enable": true,
   "git.confirmSync": true,
@@ -58,5 +58,8 @@
   "workbench.iconTheme": "minimal-icons",
   "workbench.startupEditor": "readme",
   "workbench.tips.enabled": false,
-  "workbench.tree.indent": 13
+  "workbench.tree.indent": 13,
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
 }
