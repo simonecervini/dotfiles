@@ -113,6 +113,40 @@ git-shit() {
 }
 alias git-browse="git remote get-url origin | sed 's/git@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/' | xargs open"
 alias git-story='git log --oneline --decorate --color --abbrev-commit --date=relative --pretty=format:"%C(yellow)%h%C(reset) - %C(green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)%C(red)%d%C(reset)"'
+alias git-empty='git commit --allow-empty -m "Empty commit"'
+git-pr() {
+    local remote_url=$(git remote get-url origin 2>/dev/null)
+    local branch=$(git branch --show-current 2>/dev/null)
+    
+    if [[ -z "$remote_url" ]]; then
+        echo "Error: Not a git repository or no remote 'origin' found"
+        return 1
+    fi
+    
+    if [[ -z "$branch" ]]; then
+        echo "Error: Could not determine current branch"
+        return 1
+    fi
+    
+    local base_url=$(echo "$remote_url" | sed 's/git@\([^:]*\):/https:\/\/\1\//' | sed 's/\.git$//')
+    
+    if [[ "$remote_url" == *"github"* ]]; then
+        if command -v gh &>/dev/null; then
+            gh pr view --web 2>/dev/null || open "${base_url}/pulls?q=is%3Apr+head%3A${branch}"
+        else
+            open "${base_url}/pulls?q=is%3Apr+head%3A${branch}"
+        fi
+    elif [[ "$remote_url" == *"gitlab"* ]]; then
+        if command -v glab &>/dev/null; then
+            glab mr view --web 2>/dev/null || open "${base_url}/-/merge_requests?scope=all&state=all&source_branch=${branch}"
+        else
+            open "${base_url}/-/merge_requests?scope=all&state=all&source_branch=${branch}"
+        fi
+    else
+        echo "Error: Unsupported git provider. Only GitHub and GitLab are supported."
+        return 1
+    fi
+}
 
 # docker utilities
 alias docker-stop-all='docker stop $(docker ps -a -q)'
