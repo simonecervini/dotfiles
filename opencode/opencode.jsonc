@@ -1,3 +1,9 @@
 {
-  "$schema": "./schema.jsonc"
+  "$schema": "./schema.jsonc",
+  "autoupdate": false,
+  "permission": {
+    "external_directory": {
+      "~/Developer/epilot-codebase/**": "allow"
+    }
+  }
 }
