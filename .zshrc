@@ -27,7 +27,8 @@ case ":$PATH:" in
 esac
 
 # bun
-[ -s "/Users/$HOME/.bun/_bun" ] && source "/Users/$HOME/.bun/_bun"
+export PATH="$HOME/.bun/bin:$PATH"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # dev command
 # usage: dev <project-name>
