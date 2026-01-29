@@ -12,3 +12,5 @@ copy-on-select = clipboard
 window-title-font-family = IBM Plex Mono Medium
 window-padding-x = 9
 window-padding-y = 9
+tab-inherit-working-directory = false
+split-inherit-working-directory = true
