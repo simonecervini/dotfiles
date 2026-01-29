@@ -39,27 +39,29 @@
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
   "todohighlight.defaultStyle": {
     "borderRadius": "3px"
   },
   "todohighlight.keywords": [
-    "TODO:",
     "FIXME:",
+    "TODO:",
     {
-      "text": "NOTE:",
+      "backgroundColor": "rgba(255, 255, 255, 0.4)",
       "color": "black",
-      "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      "text": "NOTE:"
     }
   ],
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.smartRelativeLine": true,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
   "workbench.iconTheme": "minimal-icons",
   "workbench.startupEditor": "readme",
   "workbench.tips.enabled": false,
-  "workbench.tree.indent": 13,
-  "workbench.editorAssociations": {
-    "*.svg": "default"
-  }
+  "workbench.tree.indent": 13
 }
