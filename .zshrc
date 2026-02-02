@@ -1,6 +1,5 @@
 # default path
 DEVELOPER_PATH=~/Developer
-cd $DEVELOPER_PATH
 
 # fnm (optional)
 command -v fnm &>/dev/null && eval "$(fnm env --use-on-cd --shell zsh)"
