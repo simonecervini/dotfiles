@@ -43,5 +43,17 @@
     "key": "alt+cmd+s",
     "command": "-workbench.action.toggleUnifiedSidebar",
     "when": "cursor.agentIdeUnification.enabled && !isAuxiliaryWindowFocusedContext"
+  },
+  // ctrl+cmd+enter (git wip)
+  {
+    "key": "ctrl+cmd+enter",
+    "command": "workbench.action.tasks.runTask",
+    "args": "git-wip"
+  },
+  // ctrl+cmd+alt+enter (git wip without skip ci)
+  {
+    "key": "ctrl+cmd+alt+enter",
+    "command": "workbench.action.tasks.runTask",
+    "args": "git-wip-no-skip-ci"
   }
 ]

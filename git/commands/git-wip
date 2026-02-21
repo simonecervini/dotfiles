@@ -1,0 +1,29 @@
+#!/bin/bash
+skip_ci=true
+for arg in "$@"; do
+    case "$arg" in
+        --no-skip-ci) skip_ci=false ;;
+    esac
+done
+
+current_branch=$(git branch --show-current)
+
+for branch in main master production prod; do
+    if [ "$current_branch" = "$branch" ]; then
+        echo "Error: Cannot push WIP commit to $current_branch (protected branch)"
+        exit 1
+    fi
+done
+
+git add .
+
+timestamp=$(date '+%Y-%m-%d %H:%M:%S (%Z)')
+diff_stats=$(git diff --cached --stat | sed 's/^ *//')
+
+if [ "$skip_ci" = true ]; then
+    commit_msg="$(printf 'WIP 🚧\n\n%s\n\n[skip ci]\n\nT = %s' "$diff_stats" "$timestamp")"
+else
+    commit_msg="$(printf 'WIP 🚧\n\n%s\n\nT = %s' "$diff_stats" "$timestamp")"
+fi
+
+git commit -m "$commit_msg" --no-verify --allow-empty && git push

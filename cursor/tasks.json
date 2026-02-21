@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "git-wip",
+      "type": "shell",
+      "command": "git wip",
+      "presentation": { "reveal": "silent", "panel": "dedicated", "close": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "git-wip-no-skip-ci",
+      "type": "shell",
+      "command": "git wip --no-skip-ci",
+      "presentation": { "reveal": "silent", "panel": "dedicated", "close": true },
+      "problemMatcher": []
+    }
+  ]
+}

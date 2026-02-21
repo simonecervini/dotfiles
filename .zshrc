@@ -18,6 +18,9 @@ source $ZSH/oh-my-zsh.sh
 export GPG_TTY=$(tty)
 alias gpg-reload='gpgconf --kill gpg-agent'
 
+# custom git commands
+export PATH="$HOME/.config/simonecervini/git-commands:$PATH"
+
 # pnpm
 export PNPM_HOME="/Users/$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -78,31 +81,6 @@ wildid() {
 }
 
 # git utilities
-git-wip() {
-    current_branch=$(git branch --show-current)
-    protected_branches=("main" "master" "production" "prod")
-    
-    for branch in "${protected_branches[@]}"; do
-        if [[ "$current_branch" == "$branch" ]]; then
-            echo "Error: Cannot push WIP commit to $current_branch branch (protected branch)"
-            return 1
-        fi
-    done
-    
-    git add .
-    
-    timestamp=$(date '+%Y-%m-%d %H:%M:%S (%Z)')
-    diff_stats=$(git diff --cached --stat | sed 's/^ *//')
-    commit_msg="WIP 🚧
-
-${diff_stats}
-
-[skip ci]
-
-T = $timestamp"
-    
-    git commit -m "$commit_msg" --no-verify --allow-empty && git push
-}
 git-sprout() {
     local id=$(wildid)
     branch_name="simone/${id}"
