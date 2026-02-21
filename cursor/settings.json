@@ -60,7 +60,9 @@
   "workbench.editorAssociations": {
     "*.svg": "default"
   },
+  "workbench.activityBar.location": "top",
   "workbench.iconTheme": "minimal-icons",
+  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "readme",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 13

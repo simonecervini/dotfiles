@@ -59,7 +59,7 @@ dev() {
 }
 
 # c command
-alias c='cursor'
+alias c='code'
 compdef _gnu_generic c
 
 # wildid - generates a unique identifier (date-adjective-animal)
