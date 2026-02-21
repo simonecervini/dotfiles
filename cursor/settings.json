@@ -11,7 +11,7 @@
   "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Berkeley Mono', 'IBM Plex Mono', Arial",
+  "editor.fontFamily": "'Berkeley Mono', 'IBM Plex Mono', 'Geist Mono', monospace",
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -56,6 +56,7 @@
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.smartRelativeLine": true,
+  "window.nativeTabs": true,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.editorAssociations": {
     "*.svg": "default"

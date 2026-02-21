@@ -55,5 +55,10 @@
     "key": "ctrl+cmd+alt+enter",
     "command": "workbench.action.tasks.runTask",
     "args": "git-wip-no-skip-ci"
+  },
+  // cmd+t (open new native tab)
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.newWindowTab"
   }
 ]
