@@ -24,7 +24,12 @@
   "git.allowNoVerifyCommit": true,
   "git.autofetch": true,
   "git.branchPrefix": "simone/",
-  "git.branchProtection": ["main", "master", "prod", "production"],
+  "git.branchProtection": [
+    "main",
+    "master",
+    "prod",
+    "production"
+  ],
   "git.branchRandomName.enable": true,
   "git.confirmSync": true,
   "git.enableSmartCommit": true,
@@ -38,6 +43,14 @@
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "json.schemaDownload.trustedDomains": {
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://turborepo.dev/schema.json": true,
+    "https://www.schemastore.org/": true
+  },
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
   "todohighlight.defaultStyle": {
@@ -56,11 +69,11 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.smartRelativeLine": true,
   "window.nativeTabs": true,
+  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.editorAssociations": {
     "*.svg": "default"
   },
-  "workbench.activityBar.location": "top",
   "workbench.iconTheme": "minimal-icons",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "readme",
