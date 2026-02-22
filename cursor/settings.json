@@ -68,6 +68,7 @@
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.smartRelativeLine": true,
+  "window.customTitleBarVisibility": "never",
   "window.nativeTabs": true,
   "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
@@ -75,6 +76,7 @@
     "*.svg": "default"
   },
   "workbench.iconTheme": "minimal-icons",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "readme",
   "workbench.tips.enabled": false,
