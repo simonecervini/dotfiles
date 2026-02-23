@@ -11,7 +11,7 @@
   "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Berkeley Mono', 'IBM Plex Mono', 'Geist Mono', monospace",
+  "editor.fontFamily": "Simono, 'Berkeley Mono', 'IBM Plex Mono', 'Geist Mono', monospace",
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -70,7 +70,7 @@
   "vim.smartRelativeLine": true,
   "window.customTitleBarVisibility": "never",
   "window.nativeTabs": true,
-  "window.title": "${rootName}${separator}${activeEditorShort}${separator}${profileName}",
+  "window.title": "${rootName}${separator}${profileName}",
   "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.editorAssociations": {
