@@ -26,4 +26,4 @@ else
     commit_msg="$(printf 'WIP 🚧\n\n%s\n\nT = %s' "$diff_stats" "$timestamp")"
 fi
 
-git commit -m "$commit_msg" --no-verify --allow-empty && git push
+git commit -m "$commit_msg" --no-verify --allow-empty && git push -u origin HEAD
