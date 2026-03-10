@@ -2,16 +2,16 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "git-wip",
+      "label": "git-save",
       "type": "shell",
-      "command": "git wip",
+      "command": "git save",
       "presentation": { "reveal": "silent", "panel": "dedicated", "close": true },
       "problemMatcher": []
     },
     {
-      "label": "git-wip-no-skip-ci",
+      "label": "git-save-no-skip-ci",
       "type": "shell",
-      "command": "git wip --no-skip-ci",
+      "command": "git save --no-skip-ci",
       "presentation": { "reveal": "silent", "panel": "dedicated", "close": true },
       "problemMatcher": []
     }

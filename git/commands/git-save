@@ -1,0 +1,46 @@
+#!/bin/bash
+skip_ci=true
+for arg in "$@"; do
+    case "$arg" in
+        --no-skip-ci) skip_ci=false ;;
+    esac
+done
+
+current_branch=$(git branch --show-current)
+
+for branch in main master production prod; do
+    if [ "$current_branch" = "$branch" ]; then
+        echo "Error: Cannot push to $current_branch (protected branch)"
+        exit 1
+    fi
+done
+
+git add .
+
+# Build subject: save(N): path/file(+X/-Y) path/file(+X/-Y) ...
+numstat=$(git diff --cached --numstat)
+if [ -z "$numstat" ]; then
+    subject="save(0)"
+else
+    file_count=$(echo "$numstat" | wc -l | tr -d ' ')
+    file_details=$(echo "$numstat" | while read ins del file; do
+        if [ "$ins" = "-" ]; then
+            printf "%s(bin) " "$file"
+        else
+            printf "%s(+%s/-%s) " "$file" "$ins" "$del"
+        fi
+    done | sed 's/ $//')
+    subject="save(${file_count}): ${file_details}"
+fi
+
+# Full commit message with body
+diff_details=$(git diff --cached --stat | sed 's/^ *//')
+timestamp=$(date '+%Y-%m-%d %H:%M:%S (%Z)')
+
+if [ "$skip_ci" = true ]; then
+    commit_msg="$(printf '%s\n\n%s\n\n[skip ci]\n\nT = %s' "$subject" "$diff_details" "$timestamp")"
+else
+    commit_msg="$(printf '%s\n\n%s\n\nT = %s' "$subject" "$diff_details" "$timestamp")"
+fi
+
+git commit -m "$commit_msg" --no-verify --allow-empty && git push -u origin HEAD
