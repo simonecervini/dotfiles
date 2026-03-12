@@ -136,6 +136,11 @@ alias nukedotenv='find . -type f -name ".env*" -print -exec rm -f {} \;'
 alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-hosts.js"
 alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
 
+# OpenCode
+alias oc="opencode"
+alias ocw="opencode web --port 4096 --hostname 127.0.0.1"
+alias oca="opencode attach http://127.0.0.1:4096 --dir ."
+
 # `k` command (kill all processes running on a port)
 kill_port() {
     if [ -z "$1" ]; then
