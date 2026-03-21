@@ -1,17 +1,13 @@
 # default path
 DEVELOPER_PATH=~/Developer
 
-# fnm (optional)
-command -v fnm &>/dev/null && eval "$(fnm env --use-on-cd --shell zsh)"
-
-# nvm (oh-my-zsh plugin)
-zstyle ':omz:plugins:nvm' lazy yes # speed-up zsh startup
-zstyle ':omz:plugins:nvm' autoload yes
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="custom"
-plugins=(git nvm)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # gpg
