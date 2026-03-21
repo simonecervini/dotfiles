@@ -22,7 +22,7 @@ alias gpg-reload='gpgconf --kill gpg-agent'
 export PATH="$HOME/.config/simonecervini/git-commands:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/$HOME/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
