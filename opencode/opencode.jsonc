@@ -1,6 +1,7 @@
 {
   "$schema": "./schema.jsonc",
   "autoupdate": false,
+  "plugin": ["opencode-claude-auth"],
   "permission": {
     "external_directory": {
       "~/Developer/epilot-codebase/**": "allow"
