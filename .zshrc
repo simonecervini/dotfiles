@@ -133,9 +133,15 @@ alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-ho
 alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
 
 # OpenCode
-alias oc="opencode"
-alias ocw="opencode web --port 4096 --hostname 127.0.0.1"
-alias oca="opencode attach http://127.0.0.1:4096 --dir ."
+alias ocs="opencode web --port 4096 --hostname 127.0.0.1"
+oc() {
+    if ! nc -z 127.0.0.1 4096 2>/dev/null; then
+        echo 'Error: OpenCode server is not running on port 4096. Start it with "ocs".'
+        return 1
+    fi
+
+    opencode attach http://127.0.0.1:4096 --dir .
+}
 
 # `k` command (kill all processes running on a port)
 kill_port() {
