@@ -1,25 +1,17 @@
 ---
-description: git commit and push
+description: commit and push current git changes
+agent: build
 subtask: true
 ---
 
-Commit and push
+Create one Conventional Commit from the current repository changes, then push it.
 
-- Make sure it follows the Conventional Commits specification
-- Prefer to explain WHY something was done from an end user perspective instead of
-WHAT was done.
-- Do not do generic messages like "improved agent experience" be very specific about what user facing changes were made
+Keep this fast: inspect the full git change set, write a good commit message, commit everything, and push.
 
-If there are conflicts DO NOT FIX THEM. notify me and I will fix them
-
-## GIT DIFF
-
-!`git diff`
-
-## GIT DIFF --cached
-
-!`git diff --cached`
-
-## GIT STATUS --short
-
-!`git status --short`
+Steps:
+- Inspect changes with `git status --short`, `git diff --cached`, `git diff`, and `git ls-files --others --exclude-standard`.
+- If there are untracked files, inspect their contents too, because they will be included in the commit.
+- Write a Conventional Commit subject plus a short body explaining the meaningful change for future agents.
+- Stage everything, commit with subject and body, then push.
+- If there are conflicts, no changes, suspicious unrelated changes, or push fails, stop and report the blocker.
+- Final output: one line with commit hash, subject, and push result.
