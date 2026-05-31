@@ -1,0 +1,4 @@
+- Do not write tests for new implementations during active development unless explicitly requested. Treat tests as opt-in until the behavior is stable
+- In TypeScript, strongly prefer inferred types over explicit annotations. When unsure, infer more and annotate less. Add explicit types only at real boundaries, for tooling, or when inference is clearly harmful
+- Do not create thin wrappers or one-line helper functions unless they remove real duplication, enforce validation, or provide a meaningful abstraction. Inline trivial pass-through logic
+- When logic becomes complex or non-trivial, consider a fitting design pattern before adding ad-hoc structure. Prefer simple, natural uses of common patterns such as Factory, Builder, Adapter, Decorator, Proxy, Strategy, Iterator, etc.. Do not force patterns into simple code
