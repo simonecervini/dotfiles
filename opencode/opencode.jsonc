@@ -2,9 +2,13 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "plugin": [],
+  "references": {
+    "effect": "github.com/Effect-TS/effect-smol",
+    "epilot": "~/Developer/epilot-codebase"
+  },
   "permission": {
     "external_directory": {
       "~/Developer/epilot-codebase/**": "allow"
     }
-  }
+  },
 }
