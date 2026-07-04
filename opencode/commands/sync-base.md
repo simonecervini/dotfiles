@@ -6,7 +6,13 @@ subtask: true
 
 Merge the latest remote default branch into the current branch.
 
+<user_context>
+$ARGUMENTS
+</user_context>
+
 Infer the repository default branch from the remote. Do not assume it is called `main` or `master`.
+Use `user_context` as optional additional guidance for this merge operation, but
+verify everything against the actual repository state.
 
 ## Before changing anything
 
