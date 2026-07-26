@@ -1,12 +1,6 @@
 #!/bin/bash
-repo_root=$(git rev-parse --show-toplevel) || exit 1
 
-git -C "$repo_root" add -A
-git -C "$repo_root" commit -m "temp" --no-verify || exit 1
+commit_message="commit [skip ci]"
+[ "$1" = "--no-skip-ci" ] && commit_message="commit"
 
-opencode run \
-    --dir "$repo_root" \
-    --model openai/gpt-5.5-fast \
-    --agent build \
-    --variant high \
-    --command rename-commit
+git add -A && git commit -m "$commit_message" --no-verify && git push -u origin HEAD

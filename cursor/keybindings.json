@@ -44,17 +44,17 @@
     "command": "-workbench.action.toggleUnifiedSidebar",
     "when": "cursor.agentIdeUnification.enabled && !isAuxiliaryWindowFocusedContext"
   },
-  // ctrl+cmd+enter (git save)
+  // ctrl+cmd+enter (git save without skip ci)
   {
     "key": "ctrl+cmd+enter",
     "command": "workbench.action.tasks.runTask",
-    "args": "git-save"
+    "args": "git-save-no-skip-ci"
   },
-  // ctrl+cmd+alt+enter (git save without skip ci)
+  // ctrl+cmd+alt+enter (git save)
   {
     "key": "ctrl+cmd+alt+enter",
     "command": "workbench.action.tasks.runTask",
-    "args": "git-save-no-skip-ci"
+    "args": "git-save"
   },
   // cmd+t (open new native tab)
   {

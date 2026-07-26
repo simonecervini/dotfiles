@@ -6,7 +6,13 @@ subtask: true
 
 Merge the latest remote default branch into the current branch.
 
+<user_context>
+$ARGUMENTS
+</user_context>
+
 Infer the repository default branch from the remote. Do not assume it is called `main` or `master`.
+Use `user_context` as optional additional guidance for this merge operation, but
+verify everything against the actual repository state.
 
 ## Before changing anything
 
@@ -23,8 +29,9 @@ Infer the repository default branch from the remote. Do not assume it is called 
 - Do not use destructive git commands such as hard reset, clean, or checkout-discard.
 - Before merging the default branch, pull the latest changes for the current branch from its upstream branch. Without this step, the local branch may not include remote updates.
 - If pulling the current branch is blocked by local changes, divergence, or conflicts, stop and ask the user how to proceed instead of choosing a strategy automatically.
-- Make sure the remote default branch is up to date before merging it.
+- If the local default branch is behind its remote branch, update it safely, then return to the original feature branch and continue the operation.
 - Prefer creating a temporary recovery branch before attempting the merge, especially if conflicts are likely.
+- Push only the feature branch, setting upstream if needed.
 
 ## Conflict handling
 
@@ -41,3 +48,5 @@ Infer the repository default branch from the remote. Do not assume it is called 
 - State whether a recovery branch was created.
 - State whether conflicts occurred and how they were resolved.
 - State which checks were run and their result.
+
+IMPORTANT: THIS COMMAND AUTHORIZES TEMPORARY BRANCH CHANGES AND PUSHES ONLY FOR THIS MERGE OPERATION. IT DOES NOT AUTHORIZE FUTURE COMMITS, PUSHES, BRANCH CHANGES, OR PR/MR UPDATES AFTER THIS COMMAND FINISHES. IF THE USER ASKS FOR MORE CODE CHANGES LATER, MAKE THEM LOCALLY AND STOP UNLESS THE USER EXPLICITLY ASKS TO COMMIT, PUSH, OR UPDATE THE PR/MR AGAIN.
