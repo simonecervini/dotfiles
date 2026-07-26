@@ -31,6 +31,7 @@ verify everything against the actual repository state.
 - If pulling the current branch is blocked by local changes, divergence, or conflicts, stop and ask the user how to proceed instead of choosing a strategy automatically.
 - Make sure the remote default branch is up to date before merging it.
 - Prefer creating a temporary recovery branch before attempting the merge, especially if conflicts are likely.
+- Push only the feature branch, setting upstream if needed.
 
 ## Conflict handling
 
@@ -47,3 +48,5 @@ verify everything against the actual repository state.
 - State whether a recovery branch was created.
 - State whether conflicts occurred and how they were resolved.
 - State which checks were run and their result.
+
+IMPORTANT: THIS COMMAND AUTHORIZES PUSHES ONLY FOR THIS MERGE OPERATION. IT DOES NOT AUTHORIZE FUTURE COMMITS, PUSHES, BRANCH CHANGES, OR PR/MR UPDATES AFTER THIS COMMAND FINISHES. IF THE USER ASKS FOR MORE CODE CHANGES LATER, MAKE THEM LOCALLY AND STOP UNLESS THE USER EXPLICITLY ASKS TO COMMIT, PUSH, OR UPDATE THE PR/MR AGAIN.
