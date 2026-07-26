@@ -3,4 +3,4 @@
 commit_message="commit [skip ci]"
 [ "$1" = "--no-skip-ci" ] && commit_message="commit"
 
-git add -A && git commit -m "$commit_message" --no-verify
+git add -A && git commit -m "$commit_message" --no-verify && git push -u origin HEAD
