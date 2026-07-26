@@ -16,8 +16,11 @@ the remote default branch and target every extracted PR/MR to it, not to the
 branch being split.
 
 The user may request one split or many, including explicit counts like "split
-this into 4 PRs". If the split is clear enough, proceed autonomously. Ask one
-short question only when the scope is genuinely ambiguous or unsafe to separate.
+this into 4 PRs". If the scope is clear, proceed autonomously. Determine from
+`user_input` whether extracted changes must be moved (removed from the source
+branch) or copied (kept there too). If this is not explicit or unmistakable,
+ask one short question before changing branches or files. Also ask only when a
+scope is genuinely ambiguous or unsafe to separate.
 
 Workflow:
 
@@ -28,8 +31,11 @@ Workflow:
    only that scope, commit it, push it, and create/update its PR/MR. Keep branch
    names, commit messages, PR/MR text, summaries, and final response in English
    for consistency across repositories and tooling.
-4. Preserve unrelated work on the original branch.
-5. Return all PR/MR URLs, what each contains, and what remains outside them.
+4. Preserve unrelated work on the source branch. Keep or remove each extracted
+   scope there according to the decision above; never assume removal.
+5. Finish with an extracted branch checked out, never the source branch. For
+   multiple scopes, use the last created branch unless the user specified one.
+6. Return all PR/MR URLs, what each contains, and what remains outside them.
 
 Safety:
 
