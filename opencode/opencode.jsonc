@@ -8,6 +8,7 @@
     "epilot": "~/Developer/epilot-codebase"
   },
   "permission": {
+    "question": "deny",
     "external_directory": {
       "~/Developer/epilot-codebase/**": "allow"
     }
