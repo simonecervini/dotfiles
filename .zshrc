@@ -1,5 +1,6 @@
 # default path
 DEVELOPER_PATH=~/Developer
+export PATH="$HOME/.local/bin:$PATH"
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
