@@ -1,6 +1,4 @@
 {
-  "cursor.composer.shouldAllowCustomModes": true,
-  "cursor.composer.shouldAutoAcceptDiffs": false,
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.autoClosingBrackets": "never",
   "editor.codeActionsOnSave": {

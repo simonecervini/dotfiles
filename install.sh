@@ -16,9 +16,9 @@ cp -R opencode "$HOME/.config/opencode"
 
 # cursor & vscode (same settings for both)
 for app in Cursor Code; do
-  cp cursor/settings.json "$HOME/Library/Application Support/$app/User/settings.json"
-  cp cursor/keybindings.json "$HOME/Library/Application Support/$app/User/keybindings.json"
-  cp cursor/tasks.json "$HOME/Library/Application Support/$app/User/tasks.json"
+  cp vscode/settings.json "$HOME/Library/Application Support/$app/User/settings.json"
+  cp vscode/keybindings.json "$HOME/Library/Application Support/$app/User/keybindings.json"
+  cp vscode/tasks.json "$HOME/Library/Application Support/$app/User/tasks.json"
 done
 
 # custom scripts (~/.config/simonecervini)

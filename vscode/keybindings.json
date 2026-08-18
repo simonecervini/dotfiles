@@ -38,12 +38,6 @@
     "command": "-editor.action.goToReferences",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
-  // alt+cmd+s (toggle unified sidebar)
-  {
-    "key": "alt+cmd+s",
-    "command": "-workbench.action.toggleUnifiedSidebar",
-    "when": "cursor.agentIdeUnification.enabled && !isAuxiliaryWindowFocusedContext"
-  },
   // ctrl+cmd+enter (git save without skip ci)
   {
     "key": "ctrl+cmd+enter",
