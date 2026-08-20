@@ -62,6 +62,9 @@ dev() {
 alias c='code'
 compdef _gnu_generic c
 
+# claude
+alias cc='claude --dangerously-skip-permissions --model fable'
+
 # wildid - generates a unique identifier (date-adjective-animal)
 # usage: wildid [separator]
 wildid() {
