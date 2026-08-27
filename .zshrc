@@ -31,14 +31,22 @@ export PATH="$HOME/.bun/bin:$PATH"
 
 # dev command
 # usage: dev <project-name>
+DEV_PROJECT_ROOTS=(
+    "$DEVELOPER_PATH/code"
+    "$DEVELOPER_PATH"
+    "$HOME/projects"
+)
 _dev_autocomplete() {
-    # TODO: remove the /code from the path
-    local projects_dir=$DEVELOPER_PATH/code
     _arguments '*:project name:->projects'
     case $state in
         projects)
-            local -a projects
-            projects=(${projects_dir}/*(N:t))
+            local project_root project
+            local -Ua projects
+            for project_root in $DEV_PROJECT_ROOTS; do
+                for project in "$project_root"/*(N/); do
+                    projects+=("${project:t}")
+                done
+            done
             _describe 'project' projects
             ;;
     esac
@@ -50,12 +58,16 @@ dev() {
         return 1
     fi
 
-    cd $DEVELOPER_PATH/code/$1
+    local project_root
+    for project_root in $DEV_PROJECT_ROOTS; do
+        if [[ -d "$project_root/$1" ]]; then
+            cd -- "$project_root/$1"
+            return
+        fi
+    done
 
-    if [[ $? != 0 ]]; then
-        echo "The specified directory does not exist."
-        return 1
-    fi
+    echo "The specified directory does not exist."
+    return 1
 }
 
 # c command
