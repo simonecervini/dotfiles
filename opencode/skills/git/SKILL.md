@@ -17,7 +17,6 @@ When the user asks to commit:
 
 - Inspect status, all diffs, untracked contents, and recent commits.
 - Create one commit with an accurate, single-line message based on the context gathered during the task. Push only when requested.
-- Return only the commit message.
 
 Never create a commit autonomously unless the user explicitly asks.
 
@@ -31,7 +30,7 @@ When the user asks to create or update a PR/MR:
 - Lead the description with changed behavior and why it matters. Include implementation detail only when useful to reviewers. Use sections or before/after examples only when they make distinct changes or changed contracts easier to understand; otherwise, use plain paragraphs.
 - Omit file-by-file narration, commit logs, generic headings, template scaffolding, test plans, routine validation, unsupported issue references, and sensitive customer data.
 - Link related PRs/MRs for cross-repository work.
-- Return only the title and URL.
+- When a PR/MR is created or updated, include its title and URL in the final response.
 
 Do not create or update a PR/MR unless the user asks. You may refresh an existing PR/MR already known from the current context after material changes. Do not proactively check for one after every change.
 
