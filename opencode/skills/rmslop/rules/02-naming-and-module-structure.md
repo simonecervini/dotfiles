@@ -87,12 +87,16 @@ Exception: framework-reserved route files and deliberate component-family module
 
 Symptom: a module-level symbolic constant, such as a fixed timeout, limit, or protocol literal, uses local-variable casing. A `const` binding alone does not make a value a symbolic constant.
 
+Apply the private one-use variable rule first. Do not rename a binding that should be inlined.
+
 ```ts
 // Wrong.
 const retryDelay = 500
+setTimeout(onTimeout, retryDelay)
 
 // Rewrite.
 const RETRY_DELAY = 500
+setTimeout(onTimeout, RETRY_DELAY)
 ```
 
 Keep camelCase for module-level runtime objects whose identity, lifecycle, or internal state matters, including clients, pools, loggers, caches, and singleton instances.

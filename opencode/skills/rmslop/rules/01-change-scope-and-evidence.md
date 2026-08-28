@@ -39,17 +39,19 @@ Symptom: an old branch, adapter, declaration, comment, or fallback is now unreac
 
 Rewrite: delete it. Version control is the archive.
 
-## One-use variable adds no meaning
+## Private one-use variable
 
-Symptom: a local variable is read once and only renames a simple expression.
+Symptom: a private local or module-level variable has exactly one read, excluding its declaration.
 
 ```ts
 // Wrong.
-const isReady = status === "ready"
-return isReady ? renderReady() : null
+const API_URL = "https://api.example.com/latest"
+return fetch(API_URL)
 
 // Rewrite.
-return status === "ready" ? renderReady() : null
+return fetch("https://api.example.com/latest")
 ```
 
-Keep the variable when it names a domain decision, narrows a type, avoids duplication, or makes a complex expression readable.
+Rewrite: inline it and remove the declaration. A name for a literal or simple expression is not enough reason to keep it.
+
+Keep it when inlining changes initialization timing, evaluation count, identity, or resource lifetime. Also keep it for required type narrowing, exported contracts, or when a complex expression would obscure the use site.
