@@ -40,3 +40,4 @@ Do not create or update a PR/MR unless the user asks. You may refresh an existin
 When the user asks to create a worktree:
 
 - Place it beside the repository as `../<project-name>-<feature-branch-title>` using branch `simone/<feature-branch-title>`.
+- Immediately after creating the worktree, ask the harness to request permission for `<generated-worktree-path>/*`. Do not continue first: external directories have no default access, so the agent will block.
