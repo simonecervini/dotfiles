@@ -5,6 +5,8 @@ description: Use whenever Git, branch, commit, pull request, PR, merge request, 
 
 # Git
 
+Only commit, push, or create/update a PR/MR when the user explicitly requests it. A request to create/update a PR/MR authorizes the required commit and push. Authorization applies only to that request and does not carry over to later changes.
+
 ## Branches
 
 Whenever creating a feature branch:
@@ -18,8 +20,6 @@ When the user asks to commit:
 - Inspect status, all diffs, untracked contents, and recent commits.
 - Create one commit with an accurate, single-line message based on the context gathered during the task. Push only when requested.
 
-Never create a commit autonomously unless the user explicitly asks.
-
 ## Creating or updating pull requests / merge requests
 
 When the user asks to create or update a PR/MR:
@@ -31,8 +31,6 @@ When the user asks to create or update a PR/MR:
 - Omit file-by-file narration, commit logs, generic headings, template scaffolding, test plans, routine validation, unsupported issue references, and sensitive customer data.
 - Link related PRs/MRs for cross-repository work.
 - When a PR/MR is created or updated, include its title and URL in the final response.
-
-Do not create or update a PR/MR unless the user asks. You may refresh an existing PR/MR already known from the current context after material changes. Do not proactively check for one after every change.
 
 ## Creating worktrees
 
