@@ -85,7 +85,7 @@ Exception: framework-reserved route files and deliberate component-family module
 
 ## Module constant casing
 
-Symptom: an immutable module-level value uses local-variable casing.
+Symptom: a module-level symbolic constant, such as a fixed timeout, limit, or protocol literal, uses local-variable casing. A `const` binding alone does not make a value a symbolic constant.
 
 ```ts
 // Wrong.
@@ -93,6 +93,13 @@ const retryDelay = 500
 
 // Rewrite.
 const RETRY_DELAY = 500
+```
+
+Keep camelCase for module-level runtime objects whose identity, lifecycle, or internal state matters, including clients, pools, loggers, caches, and singleton instances.
+
+```ts
+const ssm = new SSMClient()
+const db = createDatabaseClient()
 ```
 
 Do not uppercase mutable module state, functions, components, or established exported APIs.
