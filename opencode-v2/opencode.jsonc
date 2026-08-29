@@ -15,6 +15,16 @@
       "action": "external_directory",
       "resource": "~/Developer/epilot-codebase/**",
       "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/Developer/?",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/Developer/code/?",
+      "effect": "deny"
     }
   ]
 }
