@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+opencode_source="opencode"
+if [ "$#" -eq 1 ] && [ "$1" = "--opencode-v2" ]; then
+  opencode_source="opencode-v2"
+elif [ "$#" -ne 0 ]; then
+  echo "Usage: $0 [--opencode-v2]" >&2
+  exit 1
+fi
+
 # shell
 cp .zshrc ~/.zshrc
 cp .tmux.conf ~/.tmux.conf
@@ -12,7 +20,7 @@ cp ghostty/custom-theme $HOME/.config/ghostty/themes/custom-theme
 
 # opencode
 rm -rf "$HOME/.config/opencode"
-cp -R opencode "$HOME/.config/opencode"
+cp -R "$opencode_source" "$HOME/.config/opencode"
 
 # cursor & vscode (same settings for both)
 for app in Cursor Code; do
