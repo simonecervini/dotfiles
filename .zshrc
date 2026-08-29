@@ -2,6 +2,9 @@
 DEVELOPER_PATH=~/Developer
 export PATH="$HOME/.local/bin:$PATH"
 
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
