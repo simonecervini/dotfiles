@@ -2,6 +2,9 @@
 DEVELOPER_PATH=~/Developer
 export PATH="$HOME/.local/bin:$PATH"
 
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
@@ -150,6 +153,7 @@ alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
 
 # OpenCode
 alias ocs="opencode web --port 4096 --hostname 127.0.0.1"
+alias oc2="opencode2"
 oc() {
     if ! nc -z 127.0.0.1 4096 2>/dev/null; then
         echo 'Error: OpenCode server is not running on port 4096. Start it with "ocs".'
