@@ -37,5 +37,4 @@ When the user asks to create or update a PR/MR:
 When the user asks to create a worktree:
 
 - Place it beside the repository as `../<project-name>-<feature-branch-title>` using branch `simone/<feature-branch-title>`.
-- Immediately after creating the worktree, use the OpenCode API to move the current session to the new worktree directory.
-- Then ask the harness to request permission for `<generated-worktree-path>/*`. Do not continue first: external directories have no default access, so the agent will block.
+- Immediately after creating the worktree, use the OpenCode API to move the current session to the new worktree directory. Do not continue first.

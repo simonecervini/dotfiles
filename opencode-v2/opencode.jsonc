@@ -18,6 +18,11 @@
     },
     {
       "action": "external_directory",
+      "resource": "~/?",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
       "resource": "~/Developer/?",
       "effect": "deny"
     },
