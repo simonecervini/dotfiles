@@ -5,5 +5,8 @@
   },
   "diffs": {
     "single": true
+  },
+  "keybinds": {
+    "model.cycle_favorite": "ctrl+s"
   }
 }
