@@ -5,6 +5,14 @@
     "effect": "github.com/Effect-TS/effect-smol",
     "epilot": "~/Developer/epilot-codebase"
   },
+  "mcp": {
+    "servers": {
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v2/mcp"
+      }
+    }
+  },
   "permissions": [
     {
       "action": "question",
