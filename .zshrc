@@ -150,6 +150,7 @@ alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
 
 # OpenCode
 alias oc="opencode2"
+export PATH=$HOME/.opencode/bin:$PATH
 
 # `k` command (kill all processes running on a port)
 kill_port() {
