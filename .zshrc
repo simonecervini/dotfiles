@@ -2,9 +2,6 @@
 DEVELOPER_PATH=~/Developer
 export PATH="$HOME/.local/bin:$PATH"
 
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
-
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
@@ -152,16 +149,7 @@ alias update-hosts="sudo node $DEVELOPER_PATH/code/dotfiles/scripts-js/update-ho
 alias import-config="cd $DEVELOPER_PATH/code/dotfiles && bash install.sh"
 
 # OpenCode
-alias ocs="opencode web --port 4096 --hostname 127.0.0.1"
-alias oc2="opencode2"
-oc() {
-    if ! nc -z 127.0.0.1 4096 2>/dev/null; then
-        echo 'Error: OpenCode server is not running on port 4096. Start it with "ocs".'
-        return 1
-    fi
-
-    opencode attach http://127.0.0.1:4096 --dir .
-}
+alias oc="opencode2"
 
 # `k` command (kill all processes running on a port)
 kill_port() {
