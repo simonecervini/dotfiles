@@ -6,6 +6,9 @@
   "diffs": {
     "single": true
   },
+  "session": {
+    "sidebar": "hide"
+  },
   "keybinds": {
     "model.cycle_favorite": "ctrl+s"
   }
