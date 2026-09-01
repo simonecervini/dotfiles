@@ -7,7 +7,8 @@
     "single": true
   },
   "session": {
-    "sidebar": "hide"
+    "sidebar": "hide",
+    "new_location": "inherit"
   },
   "keybinds": {
     "model.cycle_favorite": "ctrl+s"

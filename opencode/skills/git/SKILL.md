@@ -37,4 +37,11 @@ When the user asks to create or update a PR/MR:
 When the user asks to create a worktree:
 
 - Place it beside the repository as `../<project-name>-<feature-branch-title>` using branch `simone/<feature-branch-title>`.
-- Immediately after creating the worktree, use the OpenCode API to move the current session to the new worktree directory. Do not continue first.
+
+Follow this exact order:
+
+1. Create the empty target directory.
+2. Move the current OpenCode session to that directory with `opencode2 api v2.session.move --param "sessionID=<current-session-id>" --data '{"directory":"<absolute-worktree-path>"}'`.
+3. Create the Git worktree in the existing empty directory.
+
+This order is mandatory. OpenCode must enter the directory before Git populates it, or filesystem permission checks may block the session. Do not create the worktree before moving the session.
