@@ -36,7 +36,7 @@ When the user asks to create or update a PR/MR:
 
 When the user asks to create a worktree:
 
-- Before creating the worktree, make sure the base branch is clean and up to date with its remote. Use the repository's main branch unless another base is required.
+- Before creating the worktree, fetch the remote and base the new branch on the latest remote main branch, regardless of the current branch or local main state. Use another base only when the user explicitly requests it.
 - Place it beside the repository as `../<project-name>-<feature-branch-title>` using branch `simone/<feature-branch-title>`.
 
 Follow this exact order:
