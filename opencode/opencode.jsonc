@@ -10,6 +10,10 @@
       "atlassian": {
         "type": "remote",
         "url": "https://mcp.atlassian.com/v2/mcp"
+      },
+      "miro": {
+        "type": "remote",
+        "url": "https://mcp.miro.com/"
       }
     }
   },
