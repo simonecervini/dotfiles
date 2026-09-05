@@ -1,6 +1,6 @@
-import { Plugin } from "@opencode-ai/plugin"
+import type { Plugin } from "@opencode-ai/plugin"
 
-export default Plugin.define({
+export default {
   id: "user.pwd.server",
   setup() {},
-})
+} satisfies Plugin.Plugin

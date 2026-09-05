@@ -25,6 +25,21 @@
     },
     {
       "action": "external_directory",
+      "resource": "~/.*/*",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/opencode/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.local/share/opencode/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
       "resource": "~/Developer/epilot-codebase/**",
       "effect": "allow"
     },

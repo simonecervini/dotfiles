@@ -17,7 +17,7 @@ function Commands(props: { context: Plugin.Context }) {
           const route = props.context.ui.router.current()
           if (route.type !== "session") return
 
-          const directory = props.context.location?.directory
+          const directory = props.context.data.session.get(route.sessionID)?.location.directory
           if (!directory) {
             props.context.ui.toast.show({ message: "Session working directory is unavailable", variant: "error" })
             return
@@ -52,7 +52,7 @@ function Commands(props: { context: Plugin.Context }) {
           const route = props.context.ui.router.current()
           if (route.type !== "session") return
 
-          const directory = props.context.location?.directory
+          const directory = props.context.data.session.get(route.sessionID)?.location.directory
           if (!directory) {
             props.context.ui.toast.show({ message: "Session working directory is unavailable", variant: "error" })
             return
