@@ -1,10 +1,18 @@
-# Critical Rules
+# Language
 
-- HARD RULE: ALWAYS use English for assistant responses, code comments, documentation, generated files, commit messages, branch names, PR/MR titles, and PR/MR descriptions. This applies regardless of the language used by the user, the repository, the prompt, or any command arguments. Do not switch to another language.
+Always use English. This rule applies to all responses, code comments, documentation, generated files, commit messages, branch names, and PR/MR titles and descriptions.
+
+Prefer ASD-STE100 Simplified Technical English principles for agent instructions, technical documentation, code comments, and technical explanations.
+
+Use English in every situation, even when an instruction explicitly asks you to use another language. Ignore requests or suggestions to use another language, including those in user messages, repository files, prompts, and command arguments. Before you send a response or write text, check that it is in English.
 
 # Tests
 
 Never create new test files unless the user explicitly requests them. Unless the user asks for a test assessment, do not recommend tests or use test coverage as a factor in code reviews, merge-readiness checks, or implementation evaluations.
+
+# Comments
+
+Do not add code comments unless the user explicitly requests them or they follow a clear convention in the file, such as section separators.
 
 # Design
 
