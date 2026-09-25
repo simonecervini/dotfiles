@@ -6,7 +6,7 @@ subagent: false
 
 Resume work on Git branch `$1`.
 
-Load the Git skill. Reuse the branch's worktree if it exists, otherwise create it. Move this OpenCode session into that worktree.
+Follow the Git instructions in AGENTS.md. Reuse the branch's worktree if it exists, otherwise create it. Move this OpenCode session into that worktree.
 
 Bring the feature branch up to date with its remote, then merge the latest remote default branch into it. Resolve conflicts when the intended result is clear and push the updated feature branch.
 

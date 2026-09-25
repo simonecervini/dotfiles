@@ -15,6 +15,12 @@ cp ghostty/custom-theme $HOME/.config/ghostty/themes/custom-theme
 rm -rf "$HOME/.config/opencode"
 cp -R opencode "$HOME/.config/opencode"
 
+# claude code
+rm -rf "$HOME/.claude/skills" "$HOME/.claude/commands"
+mkdir -p "$HOME/.claude/commands"
+cp claude/CLAUDE.md "$HOME/.claude/CLAUDE.md"
+cp -R claude/commands/. "$HOME/.claude/commands/"
+
 # cursor & vscode (same settings for both)
 for app in Cursor Code; do
   cp vscode/settings.json "$HOME/Library/Application Support/$app/User/settings.json"
