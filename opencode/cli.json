@@ -8,6 +8,7 @@
   },
   "session": {
     "sidebar": "hide",
+    "verbosity": "low",
     "new_location": "inherit"
   },
   "keybinds": {

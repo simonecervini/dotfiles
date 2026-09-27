@@ -19,6 +19,7 @@ cp -R opencode "$HOME/.config/opencode"
 rm -rf "$HOME/.claude/skills" "$HOME/.claude/commands"
 mkdir -p "$HOME/.claude/commands"
 cp claude/CLAUDE.md "$HOME/.claude/CLAUDE.md"
+cp claude/settings.json "$HOME/.claude/settings.json"
 cp -R claude/commands/. "$HOME/.claude/commands/"
 
 # cursor & vscode (same settings for both)
