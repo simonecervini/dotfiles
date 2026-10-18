@@ -12,7 +12,7 @@ Never create new test files unless the user explicitly requests them. Unless the
 
 # Comments
 
-Do not add code comments unless the user explicitly requests them or they follow a clear convention in the file, such as section separators.
+Do not add code comments unless explicitly requested. Existing explanatory comments do not authorize new ones. Follow established structural conventions, such as section separators.
 
 # Design
 
