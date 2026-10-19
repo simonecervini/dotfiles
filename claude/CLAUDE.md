@@ -22,13 +22,19 @@ Do not invent shadows, dimensions, colors, or other visual conventions when the 
 
 # Git
 
-Only commit, push, or create/update a PR/MR when the user explicitly requests it. A request to create/update a PR/MR authorizes the required commit and push. Authorization applies only to that request and does not carry over to later changes.
+Only commit, push, or create/update a PR/MR when the user explicitly requests it. A request to create/update a PR/MR authorizes the required commit and push. Authorization applies only to that request and does not carry over to later changes. The feature branch update below is the only exception.
 
 ## Branches
 
 Whenever creating a feature branch manually:
 
 - Always prefix feature branches with `simone/`, using `simone/<feature-branch-title>`. Use a specific kebab-case title. When unsure, prefer a longer descriptive title over a short generic one.
+
+## Updating feature branches
+
+Before a task changes files on a feature branch, update it with the latest changes from its remote copy and its base branch. The base branch is the target of its PR/MR. If no PR/MR exists yet, use the repository's default branch. Changes flow only into the feature branch: never modify the base branch or rewrite the feature branch history.
+
+Resolve conflicts automatically without stopping, and report uncertain resolutions in your final response. If the update added commits, push the feature branch, then continue the task. If uncommitted changes block the update, ask the user.
 
 ## Committing changes
 
